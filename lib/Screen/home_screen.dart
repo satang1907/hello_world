@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screen/example_screen.dart';
+import 'package:flutter_application_1/Screen/form_screen.dart';
+import 'package:flutter_application_1/Screen/list_view_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -21,13 +24,45 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Center(
           child: Column(
             children: [
-              Text("aaaaaa"),
-              Text("bbb"),
+              Container(color: Colors.red, child: Text("aaaaaaaaaaaaaaaaa")),
               Container(
-                width: 400,
-                height: 400,
+                width: 150,
+                height: 150,
                 color: Color(0xFF00ff00),
                 child: Image.asset('assets/images/cat.jpg'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListViewScreen(),
+                    ),
+                  );
+                },
+                child: Text("กดปุ่มนี้ดู"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FormScreen(),
+                    ),
+                  );
+                },
+                child: Text("This is form screen"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExampleScreen(),
+                    ),
+                  );
+                },
+                child: Text("ExampleScreen"),
               ),
             ],
           ),
